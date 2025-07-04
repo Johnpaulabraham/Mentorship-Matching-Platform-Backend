@@ -16,6 +16,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
 
 // Connecting to Database
+app.get("/", (req, res) => {
+	res.json({ message: "Welcome to the Mentorship Matching Platform" });
+});
+
 connectDB();
 
 app.listen(8000, () => {
