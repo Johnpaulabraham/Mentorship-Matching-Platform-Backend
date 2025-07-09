@@ -12,6 +12,18 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+const allowOrigin = [
+	"https://mentorshipmatchingplatform.vercel.app/",
+	"http://http://localhost:5173/",
+];
+app.use(
+	cors({
+		origin: "",
+		credentials: true,
+		methods: ["GET", "PUT", "DELETE", "POST"],
+		allowedHeaders: ["content-type", "Authorization"],
+	})
+);
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
 
