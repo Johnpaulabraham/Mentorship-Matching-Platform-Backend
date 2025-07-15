@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 const allowOrigin = [
-	"https://mentorshipmatchingplatform.vercel.app/",
+	"https://mentorahub.vercel.app/",
 	"http://http://localhost:5173/",
 ];
 app.use(
